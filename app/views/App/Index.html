@@ -1,0 +1,30 @@
+{{set . "title" "Home"}} {{template "header.html" .}}
+
+
+<div class="col-sm-6 col-sm-offset-3">
+    <a href="{{url "App.New"}}" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>Tambah</a>
+</div>
+
+<div class="col-sm-6 col-sm-offset-3">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Judul</th>
+                <th>Deskripsi</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{range $b := .bukus}}
+            <tr>
+                <td>{{$b.ID}}</td>
+                <td>{{$b.Nama}}</td>
+                <td>{{$b.Deskripsi}}</td>
+                <td><a href="{{url "App.Show" $b.ID}}" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span></a>  <a href="{{url "App.Edit" $b.ID}}" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span></a>  <a href="{{url "App.Delete" $b.ID}}" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>  </td>
+            </tr>
+            {{end}}
+        </tbody>
+    </table>
+</div>
+{{template "footer.html" .}}

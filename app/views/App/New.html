@@ -1,0 +1,14 @@
+{{set . "title" "Tambah Buku"}} {{template "header.html" .}}
+
+
+<div class="col-md-6 col-md-offset-3">
+    <form action="{{url "App.Simpan"}}" method="POST">
+        <label>Judul</label>
+        <input type="text" name="nama" class="form-control"><br>
+        <label>Deskripsi</label>
+        <input type="text" name="deskripsi" class="form-control"><br>
+        <input type="submit" class="btn btn-primary" value="Simpan">
+    </form>
+</div>
+
+{{template "footer.html" .}}

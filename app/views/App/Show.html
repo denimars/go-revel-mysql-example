@@ -1,0 +1,18 @@
+{{set . "title" "Tambah Buku"}} {{template "header.html" .}}
+
+<div class="col-md-6 col-md-offset-3">
+    {{with .bukus}}
+    <p>
+        {{.ID}}
+    </p>
+    <p>
+        {{.Nama}}
+    </p>
+    <p>
+        {{.Deskripsi}}
+    </p>
+    {{end}}
+</div>
+<br>
+<br>
+<a href="{{url "App.Index"}}">Kembali</a> {{template "footer.html" .}}
